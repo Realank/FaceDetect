@@ -323,7 +323,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     image = [image imageByApplyingTransform:CGAffineTransformMakeRotation(-M_PI/2.0)];
     CGPoint origin = [image extent].origin;
     image = [image imageByApplyingTransform:CGAffineTransformMakeTranslation(-origin.x, -origin.y)];
-        
+    
     [_vignatte setValue:image forKey:@"inputImage"];
     image = _vignatte.outputImage;
     

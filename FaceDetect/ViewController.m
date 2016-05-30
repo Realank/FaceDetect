@@ -35,11 +35,12 @@
         
         CGFloat faceWidth = testImage.bounds.size.width/4;
         
+        //标出脸的位置
         UIView* faceView = [[UIView alloc] initWithFrame:[self verticalFlipFromRect:faceFeature.bounds inSize:image.size toSize:testImage.bounds.size]];
         faceView.layer.borderWidth = 1;
         faceView.layer.borderColor = [[UIColor redColor] CGColor];
         [testImage addSubview:faceView];
-        
+        // 标出左眼
         if(faceFeature.hasLeftEyePosition) {
             UIView* leftEyeView = [[UIView alloc] initWithFrame:
                                    CGRectMake(0,0, faceWidth*0.3, faceWidth*0.3)];
@@ -58,7 +59,7 @@
             rightEyeView.layer.cornerRadius = faceWidth*0.15;
             [testImage  addSubview:rightEyeView];
         }
-        
+        // 标出嘴
         if(faceFeature.hasMouthPosition) {
             UIView* mouth = [[UIView alloc] initWithFrame:
                              CGRectMake(faceFeature.mouthPosition.x-faceWidth*0.2,
